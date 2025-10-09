@@ -6,7 +6,7 @@ Chatbot Widget Maker is a powerful yet easy-to-use tool that lets businesses cre
 
 ## Motivation
 
-As a web developer, I noticed that many small business owners wanted a simple way to automate responses on their websites without technical setup or expensive chatbot services. Chatbot Widget Maker was built to solve that — offering a quick, affordable, and customizable solution powered by OpenAI. It helps businesses provide instant answers to customer inquiries while staying true to their brand voice.
+As a web developer, I noticed that many small business owners wanted a simple way to automate responses on their websites without technical setup or expensive chatbot services. Chatbot Widget Maker was built to solve that, offering a quick, affordable, and customizable solution powered by OpenAI. It helps businesses provide instant answers to customer inquiries while staying true to their brand voice.
 
 ## Screenshot
 
