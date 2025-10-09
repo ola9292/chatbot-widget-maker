@@ -11,7 +11,7 @@ As a web developer, I noticed that many small business owners wanted a simple wa
 ## Screenshot
 
 ![Chatbot Widget Maker Screenshot](https://github.com/ola9292/chatbot-widget-maker/blob/b0995e6753972233c3dce8f1fe1851cecf4901da/Screenshot%202025-10-07%20at%207.39.12%20pm.png)
-![Chatbot Widget Maker Screenshot]()
+![Chatbot Widget Maker Screenshot](https://github.com/ola9292/chatbot-widget-maker/blob/0332595cd997376401af3b35b314a037e28da20b/Screenshot%202025-10-07%20at%207.44.30%20pm.png)
 
 ## Framework
 
