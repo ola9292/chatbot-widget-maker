@@ -23,7 +23,7 @@ As a web developer, I noticed that many small business owners wanted a simple wa
 2. The app generates an embeddable script tag such as:
 
    ```html
-   <script src="https://yourdomain.com/widget.js" data-id="1"></script>
+   <script src="http://127.0.0.1:5000//widget.js" data-key="wgt_Qf79wbhL_IOJuvnvG96-7g"></script>
    ```
 3. Copy and paste this script into your website’s HTML.
 4. Visitors can start chatting immediately — the chatbot answers based only on your business summary.
