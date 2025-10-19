@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto mt-3" style="max-width: 50rem;">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-info" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="border rounded-3 p-3">
+        <h2>Payment</h2>
+        <form method="POST" action="/payment">
+            <button type="submit">purchase</button>
+        </form>
+    </div>  
+
+
+</div>
+{% endblock %}

@@ -1,5 +1,6 @@
 body{
     background: #222831 !important;
+    color:#fff !important;
 }
 #app{
     background-color: #222831;
@@ -15,4 +16,12 @@ header{
     width: 800px; */
     margin: auto;
     
+}
+#content{
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+}
+.container{
+    flex: 1;
 }

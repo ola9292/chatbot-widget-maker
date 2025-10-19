@@ -1,9 +1,9 @@
 (function() {
   // Extract the business ID from the script tag’s data-id attribute
   const currentScript = document.currentScript;
-  const businessId = currentScript.getAttribute('data-id');
+  const key = currentScript.getAttribute('data-key');
 
-  if (!businessId) {
+  if (!key) {
     console.error("⚠️ No business ID found in widget script tag (data-id missing).");
     return;
   }
@@ -70,11 +70,12 @@
     // Display user message
     const userMsg = document.createElement('div');
     userMsg.style.textAlign = 'right';
+    userMsg.style.color = '#000000';
     userMsg.innerText = message;
     content.appendChild(userMsg);
 
     try {
-      const response = await fetch(`http://127.0.0.1:5000/chat?id=${businessId}`, {
+      const response = await fetch(`http://127.0.0.1:5000/chat?key=${key}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: message })

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <p class="important">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %} 
+        {% endif %}
+    {% endwith %}
+    <h1>Dashboard</h1>
+    <h3>Welcome {{ current_user.name }}</h3>
+    <p>Here are all your widgets</p>
+    {% if widgets %}
+
+    <ul class="list-group">
+        {% for widget in widgets %}
+        <li class="list-group-item d-flex justify-content-between align-items-center mb-2">
+            {{ widget.username }} ({{ widget.public_key }})
+            {% if widget.plan == 'Pro' %}
+            <span class="badge text-bg-info rounded-pill">
+                Pro
+            </span>
+            {%  elif widget.plan == 'Flex' %}
+                <span class="badge text-bg-info rounded-pill">
+                    Flex
+                </span>
+            {% else %}
+            <span class="badge text-bg-info rounded-pill">
+                <a href="{{ url_for('choose_plan', widget_id=widget.id)  }}">upgrade</a>
+            </span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No widgets yet!</p>
+    {% endif %}
+    </p>
+    {% endblock %}
+</div>
+

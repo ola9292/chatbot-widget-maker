@@ -1,9 +1,36 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p class="important">
-   <h2>Login Page</h2>
+<div class="container mx-auto mt-3" style="max-width: 50rem;">
+   {% with messages = get_flashed_messages() %}
+      {% if messages %}
+         {% for message in messages %}
+            <div class="alert alert-info" role="alert">
+               {{ message }}
+            </div>
+         {% endfor %}
+      {% endif %}
+   {% endwith %}
+   <div class="border rounded-3 p-3">
+      <h2>Login!</h2>
+      <form method="POST" action="/login">
+         {{ form.csrf_token }}
+      
+         <div class="mb-3 text-white">
+            {{ form.username.label(class="form-label") }} {{ form.username(size=20, class="form-control") }}
+         </div>
+         <div class="mb-3 text-white">
+            {{ form.password.label(class="form-label") }} {{ form.password(size=20, class="form-control") }}
+         </div>
+         <input class="btn btn-success" type="submit" value="Login">
+      </form>
+      <div class="mt-3">
+         <p>Click here to <a href="{{ url_for('register') }}">Register</a></p>
+      </div>
+      
+   </div>
+   
+</div>
 
-   <a href="{{ url_for('register') }}">Register</a>
-</p>
+
 {% endblock %}

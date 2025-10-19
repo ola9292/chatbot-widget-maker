@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <p class="important">
+    <h2>Plans</h2>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <li style="color: azure;">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+    <div class="row">
+        {% for plan in plans %}
+            <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ plan.name }}</h5>
+                        <h6>{{ plan.price }}</h6>
+                        <p class="card-text">{{ plan.desc }}</p>
+                        <form action="{{ url_for('upgrade', widget_id=widget.id) }}" method="POST">
+                            <input type="hidden" name="plan" value="{{ plan.name }}">
+                            <input type="hidden" name="price_id" value="{{ plan.price_id }}">
+                            <button class="btn btn-primary" type="submit">Choose {{ plan.name }}</button>
+                        </form>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+   
+</div>
+
+</p>
+{% endblock %}
